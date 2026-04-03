@@ -1,0 +1,17 @@
+name: Telegram Market Update
+
+on:
+  schedule:
+    - cron: "30 1 * * *"   # 7:00 AM IST
+  workflow_dispatch:
+
+jobs:
+  send_message:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Send Telegram Message
+        run: |
+          curl -s -X POST https://api.telegram.org/bot7979259558:AAFGO6fpAoA70uHqZwgkTlC5YlyRdSwc5cE/sendMessage \
+          -d chat_id=-1003814989107 \
+          -d text="Morning Market Update will be posted here daily at 7 AM 🚀"
